@@ -9,13 +9,13 @@ import { MustMatch } from 'src/app/helpers/must-matcher.validator';
 })
 export class SignupComponent implements OnInit {
 
-  public form: FormGroup;
+  public signUp: FormGroup;
   public submitted = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.form = this.formBuilder.group({
+    this.signUp = this.formBuilder.group({
       title: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -29,23 +29,23 @@ export class SignupComponent implements OnInit {
   }
 
   // convenience getter for easy access to form fields
-  get f() { return this.form.controls; }
+  get f() { return this.signUp.controls; }
 
   onSubmit() {
     this.submitted = true;
 
     // stop here if form is invalid
-    if (this.form.invalid) {
+    if (this.signUp.invalid) {
       return;
     }
 
     // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 4));
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.signUp.value, null, 4));
   }
 
   onReset() {
     this.submitted = false;
-    this.form.reset();
+    this.signUp.reset();
   }
 
 }

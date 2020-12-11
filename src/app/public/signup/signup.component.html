@@ -1,4 +1,5 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form  (ngSubmit)="onSubmit()">
+    
     <div class="imgcontainer">
         <img src="../../../assets/images/logo.png" alt="Avatar" class="avatar">
     </div>
@@ -19,7 +20,7 @@
         <div class="form-group">
             <label>First Name</label>
             <input type="text" formControlName="firstName" class="form-control" placeholder="Enter First Name"
-                [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                 />
             <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                 <div *ngIf="f.firstName.errors.required">First Name is required</div>
             </div>
@@ -28,7 +29,7 @@
         <div class="form-group">
             <label>Last Name</label>
             <input type="text" formControlName="lastName" class="form-control" placeholder="Enter Last Name"
-                [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                 />
             <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                 <div *ngIf="f.lastName.errors.required">Last Name is required</div>
             </div>
@@ -37,7 +38,7 @@
         <div class="form-group">
             <label>Email</label>
             <input type="text" formControlName="email" class="form-control" placeholder="Enter Emails"
-                [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                 />
             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                 <div *ngIf="f.email.errors.required">Email is required</div>
                 <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
@@ -47,7 +48,7 @@
         <div class="form-group">
             <label>Password</label>
             <input type="password" formControlName="password" class="form-control" placeholder="*****"
-                [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                 />
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                 <div *ngIf="f.password.errors.required">Password is required</div>
                 <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
@@ -57,7 +58,7 @@
         <div class="form-group">
             <label>Confirm Password</label>
             <input type="password" formControlName="confirmPassword" class="form-control" placeholder="*****"
-                [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                 />
             <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
                 <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
                 <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
@@ -66,7 +67,7 @@
 
         <div class="form-group form-check">
             <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input"
-                [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+                />
             <label for="acceptTerms" class="form-check-label"> &nbsp; Accept Terms & Conditions</label>
             <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
         </div>
